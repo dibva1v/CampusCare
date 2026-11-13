@@ -1,0 +1,490 @@
+
+/* =================================
+   CAMPUSCARE - LOGIN PAGE
+================================= */
+
+/* General styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef5f2;
+    color: #263b3a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main split-screen layout */
+.login-page {
+    display: flex;
+    flex: 1;
+    min-height: 85vh;
+    margin: 30px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(30, 75, 65, 0.10);
+}
+
+/* =================================
+   LEFT WELCOME PANEL
+================================= */
+
+.welcome-panel {
+    width: 50%;
+    background: linear-gradient(145deg, #176e65, #258f83);
+    color: white;
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative circles */
+.welcome-panel::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    right: -100px;
+    bottom: -80px;
+}
+
+.welcome-panel::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+    right: 30px;
+    bottom: 80px;
+}
+
+/* Brand */
+.brand {
+    position: relative;
+    z-index: 1;
+}
+
+.brand-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.brand h1 {
+    font-size: 35px;
+    margin: 0 0 10px;
+    letter-spacing: -1px;
+}
+
+.brand p {
+    color: #d5eeea;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Welcome text */
+.welcome-text {
+    max-width: 430px;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-text h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.welcome-text p {
+    color: #e0f1ed;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Bottom text */
+.welcome-bottom {
+    position: relative;
+    z-index: 1;
+    color: #d5eeea;
+    font-size: 13px;
+}
+
+/* =================================
+   RIGHT LOGIN PANEL
+================================= */
+
+.login-side {
+    width: 50%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 390px;
+    padding: 15px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Login heading */
+.login-heading {
+    margin-bottom: 35px;
+}
+
+.welcome-label {
+    display: inline-block;
+    color: #258f83;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.login-heading h2 {
+    font-size: 34px;
+    margin: 0 0 12px;
+    color: #203b3a;
+}
+
+.login-heading p {
+    color: #778985;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* =================================
+   FORM FIELDS
+================================= */
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+label {
+    display: block;
+    margin-bottom: 9px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #304b47;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dce8e4;
+    border-radius: 9px;
+    background: #f8fbfa;
+    font-size: 15px;
+    color: #263b3a;
+    transition: 0.2s;
+}
+
+input:focus {
+    outline: 3px solid #c9e9e2;
+    border-color: #258f83;
+    background: white;
+}
+
+/* =================================
+   SIGN IN BUTTON
+================================= */
+
+button {
+    width: 100%;
+    padding: 16px;
+    background: #258f83;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #176e65;
+    transform: translateY(-2px);
+}
+
+button:focus-visible {
+    outline: 3px solid #e6a23c;
+    outline-offset: 3px;
+}
+
+/* Feedback message */
+#message {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 12px;
+    color: #71837e;
+    font-size: 13px;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 768px) {
+
+    .login-page {
+        flex-direction: column;
+        margin: 15px;
+    }
+
+    .welcome-panel,
+    .login-side {
+        width: 100%;
+    }
+
+    .welcome-panel {
+        padding: 35px 30px;
+        min-height: 330px;
+        gap: 35px;
+    }
+
+    .welcome-text h2 {
+        font-size: 30px;
+    }
+
+    .login-side {
+        padding: 35px 20px;
+    }
+
+    .login-container {
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .login-page {
+        margin: 8px;
+    }
+
+    .welcome-panel {
+        padding: 25px;
+    }
+
+    .brand h1 {
+        font-size: 29px;
+    }
+
+    .welcome-text h2 {
+        font-size: 27px;
+    }
+
+    .login-heading h2 {
+        font-size: 29px;
+    }
+}
+
+
+/* CampusCare - New Blue Theme */
+
+/* Page background */
+body {
+    background: #f3f5f9;
+}
+
+/* Left welcome panel */
+.welcome-panel {
+    background: linear-gradient(145deg, #536b8e, #405775);
+}
+
+/* Brand icon */
+.brand-icon {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Welcome text */
+.welcome-text h2 {
+    color: white;
+}
+
+.welcome-text p {
+    color: #e0e7f0;
+}
+
+/* Login heading */
+.login-heading h2 {
+    color: #29364b;
+}
+
+.login-heading p {
+    color: #78869b;
+}
+
+/* Staff portal label */
+.welcome-label {
+    color: #536b8e;
+}
+
+/* Input fields */
+.form-group input {
+    border: 1px solid #dce2eb;
+    background: #f8f9fc;
+}
+
+.form-group input:focus {
+    border-color: #536b8e;
+    outline: 2px solid rgba(83, 107, 142, 0.2);
+}
+
+/* Sign in button */
+form button {
+    background: #536b8e;
+    color: white;
+}
+
+form button:hover {
+    background: #405775;
+}
+
+/* Footer */
+footer {
+    color: #78869b;
+}
+
+
+/* Dark and light mode toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    z-index: 1000;
+    padding: 11px 16px;
+    border: 1px solid #536b8e;
+    border-radius: 8px;
+    background: white;
+    color: #29364b;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.dark-mode {
+    background: #182333 !important;
+    color: #f1f4f8 !important;
+}
+
+.dark-mode .dashboard-main,
+.dark-mode .login-side {
+    background: #182333;
+    color: #f1f4f8;
+}
+
+.dark-mode .stat-card,
+.dark-mode .table-container,
+.dark-mode #studentForm,
+.dark-mode .login-box {
+    background: #26364b;
+    color: #f1f4f8;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode label,
+.dark-mode td {
+    color: #f1f4f8;
+}
+
+.dark-mode th {
+    background: #34465e;
+    color: white;
+}
+
+.dark-mode input,
+.dark-mode select {
+    background: #34465e;
+    color: white;
+    border-color: #7186a3;
+}
+
+.dark-mode .theme-toggle {
+    background: #34465e;
+    color: white;
+    border-color: #a9bad3;
+}
+
+
+
+/* Login page theme toggle */
+body #themeToggle {
+    position: fixed !important;
+    top: 22px !important;
+    right: 25px !important;
+    left: auto !important;
+    width: auto !important;
+    height: 42px;
+    min-width: 135px;
+    padding: 0 16px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    background: #edf1f7 !important;
+    color: #405775 !important;
+    border: 1px solid #d5deeb !important;
+    border-radius: 22px !important;
+    box-shadow: none !important;
+    outline: none;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background 0.2s ease;
+}
+
+body #themeToggle:hover {
+    background: #dce5f1 !important;
+}
+
+body #themeToggle:focus-visible {
+    outline: 3px solid #536b8e !important;
+    outline-offset: 3px;
+}
+
+/* Improve dark mode input readability */
+.dark-mode .form-group input {
+    background: #34465e !important;
+    color: #ffffff !important;
+    border-color: #8da2bd !important;
+}
+
+.dark-mode .form-group input::placeholder {
+    color: #e0e7f0 !important;
+    opacity: 1;
+}
+
+
+.login-heading p {
+    color: #536b8e;
+}
+
+footer {
+    color: #536b8e;
+}

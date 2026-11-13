@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusCare | Students</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body class="records-page">
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>CampusCare</h2>
+            <p class="staff-portal">Staff Portal</p>
+        </div>
+
+        <nav aria-label="Main navigation">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="students.html" aria-current="page">Students</a>
+            <a href="requests.html">Support Requests</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="reports.html">Reports</a>
+        </nav>
+
+        <button type="button" id="logoutBtn">Logout</button>
+        <button type="button" id="themeToggle" class="theme-toggle">
+            🌙 Dark Mode
+        </button>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Students</h1>
+                <p>Manage student records and information.</p>
+            </div>
+        </header>
+
+        <div class="appointments-layout">
+
+            <section class="appointment-form-card" aria-labelledby="add-title">
+                <h2 id="add-title">Add New Student</h2>
+
+                <form id="studentForm">
+
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" name="studentId" required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="department">Department</label>
+                    <select id="department" name="department" required>
+                        <option value="">Select department</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Business">Business</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Arts">Arts</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <button type="submit" class="book-appointment-button">
+                        Add Student
+                    </button>
+                </form>
+
+                <p id="message" class="appointment-message"
+                   role="status" aria-live="polite"></p>
+            </section>
+
+            <aside class="appointment-side-panel">
+
+                <section class="appointment-info-card overview-card"
+                         aria-labelledby="student-overview-title">
+                    <h2 id="student-overview-title">Student Overview</h2>
+
+                    <div class="appointment-stats">
+                        <div class="appointment-stat">
+                            <strong id="studentTotal">0</strong>
+                            <span>Total Students</span>
+                        </div>
+
+                        <div class="appointment-stat">
+                            <strong id="studentDepartments">0</strong>
+                            <span>Departments</span>
+                        </div>
+
+                        <div class="appointment-stat">
+                            <strong id="studentTotalCopy">0</strong>
+                            <span>Student Records</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="appointment-info-card reminder-card"
+                         aria-labelledby="student-reminder-title">
+                    <h2 id="student-reminder-title">💡 Quick Reminder</h2>
+                    <p>
+                        Make sure each student's name, ID, email address,
+                        and department are entered correctly.
+                    </p>
+                </section>
+
+                <section class="appointment-info-card tips-card"
+                         aria-labelledby="student-tips-title">
+                    <h2 id="student-tips-title">Student Records Tips</h2>
+                    <ul>
+                        <li>Use a unique student ID for each student.</li>
+                        <li>Enter a valid email address.</li>
+                        <li>Use the search field to find records quickly.</li>
+                    </ul>
+                </section>
+
+            </aside>
+        </div>
+
+        <section class="appointments-records" aria-labelledby="records-title">
+            <h2 id="records-title">Student Records</h2>
+
+            <label for="search">Search students</label>
+            <input type="search" id="search"
+                   placeholder="Search by name or ID">
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Student ID</th>
+                            <th scope="col">Email Address</th>
+                            <th scope="col">Department</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentsTable">
+                        <tr>
+                            <td colspan="4">Loading student records...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="auth.js"></script>
+<script src="dashboard.js"></script>
+<script src="theme.js"></script>
+<script src="students.js"></script>
+<script src="logout.js"></script>
+</body>
+</html>

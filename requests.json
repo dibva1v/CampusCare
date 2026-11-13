@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1794591788661,
+    "studentName": "Omar Osama",
+    "requestType": "Academic Support",
+    "description": "Needs help with coursework",
+    "priority": "High",
+    "followUp": "Yes - 2026-11-14",
+    "status": "Pending",
+    "date": "١٣‏/١١‏/٢٠٢٦"
+  },
+  {
+    "id": 1794603933745,
+    "studentName": "Kylie",
+    "requestType": "Health Support",
+    "description": "help",
+    "priority": "Medium",
+    "followUp": true,
+    "status": "Resolved",
+    "date": "13/11/2026"
+  },
+  {
+    "id": 1794605134863,
+    "studentName": "Talya",
+    "requestType": "Financial Support",
+    "description": "Give her some",
+    "priority": "High",
+    "followUp": false,
+    "followUpDate": "",
+    "status": "Resolved",
+    "date": "13/11/2026"
+  }
+]

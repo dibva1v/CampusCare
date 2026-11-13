@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusCare | Staff Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button type="button" id="themeToggle" class="theme-toggle">
+       🌙 Dark Mode
+    </button>
+
+    <main class="login-page">
+
+        <!-- Left welcome panel -->
+        <section class="welcome-panel">
+
+            <div class="brand">
+                <div class="brand-icon">✦</div>
+                <h1>CampusCare</h1>
+                <p>Student Support Management System</p>
+            </div>
+
+            <div class="welcome-text">
+                <h2>Every student deserves support.</h2>
+                <p>
+                    A dedicated space for managing student
+                    wellbeing, support requests and appointments.
+                </p>
+            </div>
+
+            <div class="welcome-bottom">
+                <p>Supporting students, building brighter futures.</p>
+            </div>
+
+        </section>
+
+        <!-- Right login panel -->
+        <section class="login-side">
+
+            <div class="login-container">
+
+                <div class="login-heading">
+                    <span class="welcome-label">STAFF PORTAL</span>
+                    <h2>Welcome Back</h2>
+                    <p>Please sign in to your staff account.</p>
+                </div>
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your username"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit">Sign In →</button>
+
+                    <p id="message" role="status" aria-live="polite"></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CampusCare. All rights reserved.</p>
+    </footer>
+
+    
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+    <script src="logout.js"></script>
+
+</body>
+</html>

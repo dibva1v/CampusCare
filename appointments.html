@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusCare | Appointments</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>CampusCare</h2>
+            <p class="staff-portal">Staff Portal</p>
+        </div>
+
+        <nav aria-label="Main navigation">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="students.html">Students</a>
+            <a href="requests.html">Support Requests</a>
+            <a href="appointments.html" aria-current="page">Appointments</a>
+            <a href="reports.html">Reports</a>
+        </nav>
+
+        <button type="button" id="logoutBtn">Logout</button>
+
+        <button type="button" id="themeToggle" class="theme-toggle">
+            🌙 Dark Mode
+        </button>
+    </aside>
+
+    <main class="dashboard-main appointments-page">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Schedule an Appointment</h1>
+                <p>Schedule and manage student appointments.</p>
+            </div>
+        </header>
+
+        <div class="appointments-layout">
+
+            <section class="appointment-form-card" aria-labelledby="form-title">
+                <h2 id="form-title">Book an Appointment</h2>
+
+                <form id="appointmentForm">
+
+                    <label for="studentName">Student Name</label>
+                    <input
+                        type="text"
+                        id="studentName"
+                        name="studentName"
+                        placeholder="Enter student name"
+                        required
+                    >
+
+                    <label for="appointmentType">Appointment Type</label>
+                    <select id="appointmentType" name="appointmentType" required>
+                        <option value="">Choose appointment type</option>
+                        <option value="Academic Advising">Academic Advising</option>
+                        <option value="Personal Support">Personal Support</option>
+                        <option value="Financial Support">Financial Support</option>
+                        <option value="Career Guidance">Career Guidance</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="appointmentDate">Date</label>
+                    <input
+                        type="date"
+                        id="appointmentDate"
+                        name="appointmentDate"
+                        required
+                    >
+
+                    <label for="appointmentTime">Time</label>
+                    <input
+                        type="time"
+                        id="appointmentTime"
+                        name="appointmentTime"
+                        required
+                    >
+
+                    <label for="additionalNotes">Additional Notes</label>
+                    <textarea
+                        id="additionalNotes"
+                        name="additionalNotes"
+                        rows="4"
+                        placeholder="Add any additional notes..."
+                    ></textarea>
+
+                    <button type="submit" class="book-appointment-button">
+                        Book Appointment
+                    </button>
+
+                    <p
+                        id="appointmentMessage"
+                        class="appointment-message"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+                </form>
+            </section>
+
+            <aside class="appointment-side-panel">
+
+                <section class="appointment-info-card overview-card"
+                    aria-labelledby="overview-title">
+
+                    <h2 id="overview-title"> Appointment Overview</h2>
+
+                    <div class="appointment-stats">
+                        <div class="appointment-stat">
+                            <strong id="totalAppointments">0</strong>
+                            <span>Total Appointments</span>
+                        </div>
+
+                        <div class="appointment-stat">
+                            <strong id="upcomingAppointments">0</strong>
+                            <span>Upcoming</span>
+                        </div>
+
+                        <div class="appointment-stat">
+                            <strong id="completedAppointments">0</strong>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="appointment-info-card reminder-card"
+                    aria-labelledby="reminder-title">
+
+                    <h2 id="reminder-title">💡 Quick Reminder</h2>
+
+                    <p>
+                        Check the student's details and appointment time
+                        before saving.
+                    </p>
+                </section>
+
+                <section class="appointment-info-card tips-card"
+                    aria-labelledby="tips-title">
+
+                    <h2 id="tips-title">Booking Tips</h2>
+
+                    <ul>
+                        <li>Choose a suitable date and time.</li>
+                        <li>Add any relevant notes.</li>
+                        <li>Ensure the student's information is correct.</li>
+                    </ul>
+                </section>
+
+            </aside>
+        </div>
+
+        <section class="appointments-records" aria-labelledby="records-title">
+            <h2 id="records-title">All Appointments</h2>
+
+            <label for="appointmentSearch">Search appointments</label>
+            <input
+                type="search"
+                id="appointmentSearch"
+                placeholder="Search by student name"
+            >
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Student</th>
+                            <th scope="col">Appointment Type</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="appointmentsTable">
+                        <tr>
+                            <td colspan="5">Loading appointments...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="auth.js"></script>
+<script src="dashboard.js"></script>
+<script src="theme.js"></script>
+<script src="appointments.js"></script>
+<script src="logout.js"></script>
+
+</body>
+</html>

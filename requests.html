@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusCare | Support Requests</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>CampusCare</h2>
+            <p class="staff-portal">Staff Portal</p>
+        </div>
+
+        <nav aria-label="Main navigation">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="students.html">Students</a>
+            <a href="requests.html" aria-current="page">Support Requests</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="reports.html">Reports</a>
+        </nav>
+
+        <button type="button" id="logoutBtn">Logout</button>
+
+        <button type="button" id="themeToggle" class="theme-toggle">
+            🌙 Dark Mode
+        </button>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Support Requests</h1>
+                <p>Manage and track student support requests.</p>
+            </div>
+        </header>
+
+        <div class="appointments-layout">
+
+            <section class="appointment-form-card" aria-labelledby="form-title">
+                <h2 id="form-title">Create Support Request</h2>
+
+                <form id="requestForm">
+
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName" required>
+
+                    <label for="requestType">Request Type</label>
+                    <select id="requestType" required>
+                        <option value="">Select request type</option>
+                        <option value="Academic Support">Academic Support</option>
+                        <option value="Financial Support">Financial Support</option>
+                        <option value="Personal Support">Personal Support</option>
+                        <option value="Health Support">Health Support</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="description">Request Description</label>
+                    <textarea id="description" rows="4" required></textarea>
+
+                    <fieldset>
+                        <legend>Priority Level</legend>
+
+                        <label>
+                            <input type="radio" name="priority" value="Low" required>
+                            Low
+                        </label>
+
+                        <label>
+                            <input type="radio" name="priority" value="Medium">
+                            Medium
+                        </label>
+
+                        <label>
+                            <input type="radio" name="priority" value="High">
+                            High
+                        </label>
+                    </fieldset>
+
+                    <label>
+                        <input type="checkbox" id="followUp">
+                        A follow-up is required
+                    </label>
+
+                    <div id="followUpSection" hidden>
+                        <label for="followUpDate">Follow-up Date</label>
+                        <input type="date" id="followUpDate">
+                    </div>
+
+                    <button type="submit" class="book-appointment-button">
+                        Save Request
+                    </button>
+                </form>
+            </section>
+
+            <aside class="appointment-side-panel">
+
+                <section class="appointment-info-card overview-card"
+                         aria-labelledby="request-overview-title">
+                    <h2 id="request-overview-title">Request Overview</h2>
+
+                    <div class="appointment-stats">
+                        <div class="appointment-stat">
+                            <strong id="requestTotal">0</strong>
+                            <span>Total Requests</span>
+                        </div>
+
+                        <div class="appointment-stat">
+                            <strong id="requestOpen">0</strong>
+                            <span>Open</span>
+                        </div>
+
+                        <div class="appointment-stat">
+                            <strong id="requestResolved">0</strong>
+                            <span>Resolved</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="appointment-info-card reminder-card"
+                         aria-labelledby="request-reminder-title">
+                    <h2 id="request-reminder-title">💡 Quick Reminder</h2>
+                    <p>
+                        Record the student's concern clearly and choose
+                        the correct priority level.
+                    </p>
+                </section>
+
+                <section class="appointment-info-card tips-card"
+                         aria-labelledby="request-tips-title">
+                    <h2 id="request-tips-title">Request Tips</h2>
+                    <ul>
+                        <li>Provide a clear request description.</li>
+                        <li>Choose the appropriate priority.</li>
+                        <li>Set a follow-up date when needed.</li>
+                    </ul>
+                </section>
+
+            </aside>
+        </div>
+
+        <section class="appointments-records" aria-labelledby="records-title">
+            <h2 id="records-title">All Support Requests</h2>
+
+            <label for="requestSearch">Search requests</label>
+            <input type="search" id="requestSearch"
+                   placeholder="Search by student name">
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Student</th>
+                            <th scope="col">Request Type</th>
+                            <th scope="col">Priority</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="requestsTable">
+                        <tr>
+                            <td colspan="5">Loading requests...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="requestMessage"
+               class="appointment-message"
+               role="status"
+               aria-live="polite"></p>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="auth.js"></script>
+<script src="dashboard.js"></script>
+<script src="theme.js"></script>
+<script src="requests.js"></script>
+<script src="logout.js"></script>
+
+</body>
+</html>
